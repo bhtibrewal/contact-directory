@@ -4,7 +4,7 @@ import user from '../images/user.png';
 export default function ContactCard({ contact }) {
     return (
         <div className='item'>
-            <img className='ui avatar image' src={user} />
+            <img className='ui avatar image' alt ="user" src={user} />
             <div className='content'>
                 <div className='header'>{contact.name}</div>
                 <div>{contact.email}</div>

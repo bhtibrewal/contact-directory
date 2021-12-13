@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 
-export default function AddContact() {
-    const [state, setState] = useState({
-        name: "",
-        email: ""
-    })
+export default function AddContact(props) {
+    const initialState={ name: "",email: ""}
+    const [state, setState] = useState(initialState)
     const add=(e)=>{
         e.preventDefault();
-        if(state.name === "" && state.email === "")
+        if(state.name === "" || state.email === "")
             alert("");
-        console.log(state.name);
+        props.addContactHandler(state);
+        setState(initialState);
     }
     return (
         <div className="ui main mt-3">
